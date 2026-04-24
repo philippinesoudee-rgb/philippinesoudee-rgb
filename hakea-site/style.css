@@ -1,0 +1,100 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Body ── */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Page wrapper : contient l'image + les zones cliquables ── */
+.page-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 430px;     /* largeur max mobile/portrait */
+  margin: 0 auto;
+}
+
+/* ── Image de fond : couvre toute la largeur ── */
+.page-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Zones cliquables (hotspots) ── */
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.hotspot:hover  { background: rgba(255, 255, 255, 0.07); }
+.hotspot:active { background: rgba(255, 255, 255, 0.16); }
+
+/* Accueil : bouton "Se rencontrer" */
+#btn-se-rencontrer {
+  bottom: 6.2%;
+  left: 18%;
+  width: 64%;
+  height: 7%;
+}
+
+/* Résistance : croix (bas gauche) */
+#btn-croix {
+  bottom: 2%;
+  left: 4%;
+  width: 28%;
+  height: 13%;
+}
+
+/* Résistance : fleur (bas droite) */
+#btn-fleur {
+  bottom: 2%;
+  right: 4%;
+  width: 28%;
+  height: 13%;
+}
+
+/* ── Bouton retour ── */
+.btn-back {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(176, 230, 195, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-back:hover  { background: rgba(140, 210, 165, 0.92); transform: scale(1.08); }
+.btn-back:active { transform: scale(0.94); }
+.btn-back svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
